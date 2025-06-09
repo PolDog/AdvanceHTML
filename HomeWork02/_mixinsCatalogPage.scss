@@ -1,0 +1,15 @@
+@mixin centerflex() {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+}
+
+@mixin centerflex2() {
+	// background-color: Red;
+	display: flex;
+	align-items:center;
+	justify-content: space-between;
+	// justify-content:flex-end;
+		// flex-wrap: wrap;
+}

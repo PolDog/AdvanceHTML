@@ -1,0 +1,237 @@
+@import "varsCatalogPage";
+@import "mixins";
+
+@font-face {
+	font-family: "Lato";
+	src: url(./font/Lato-Italic.woff2);
+	font-weight: normal;
+	font-style: italic;
+	font-display: swap;
+}
+summary {
+	display: block;
+}
+
+summary::-webkit-details-marker {
+	display: none;
+}
+
+.body{
+    padding-bottom: 96px;
+}
+.center {
+	padding-left: calc(50% - $widthSite/2);
+	padding-right: calc(50% - $widthSite/2);
+}
+.filter-sort {
+	height: 132px;
+	padding-top: 39px;
+	box-sizing: border-box;
+	position: relative;
+	display: flex;
+	gap: $gapGrid;
+}
+.filter {
+	// padding: 13px 16px 16px;
+	padding-top: 13px;
+	width: 360px;
+	position: relative;
+	z-index: 10;
+	// top: 39px;
+	box-sizing: border-box;
+	&__content {
+		// position: absolute;
+		padding: 0px 16px 16px 16px;
+		background-color: #fff;
+	}
+	&[open] .filter__heading {
+		color: $colorSelectSite;
+	}
+	// красим СВГ в розовый цвет
+	&[open] path {
+		fill: $colorSelectSite;
+	}
+	&[open] {
+		background: #ffffff;
+		box-shadow: 6px 4px 35px 0px rgba(0, 0, 0, 0.21);
+	}
+	&__summary {
+		display: flex;
+		align-items: center;
+		gap: 11px;
+		padding-left: 16px;
+	}
+	&__heading {
+		font-family: Lato;
+		font-weight: 600;
+		font-size: 14px;
+		line-height: 17px;
+		color: $colorText;
+	}
+	&__item {
+		margin-top: 16px;
+	}
+
+	&__head {
+		font-family: Lato;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 17px;
+		color: #6f6e6e;
+		padding: 8px 11px 11px 11px;
+		border-bottom: 1px solid #ebebeb;
+		border-left: 5px solid $colorSelectSite;
+	}
+	&__item[open] .filter__head {
+		color: $colorSelectSite;
+	}
+
+	&__link-box {
+		display: flex;
+		flex-direction: column;
+		gap: 11px;
+		padding: 24px 16px;
+	}
+	&__link {
+		font-family: Lato;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		color: #6f6e6e;
+		&:hover {
+			color: $colorSelectSite;
+		}
+	}
+}
+.sort {
+	padding-top: 12px;
+	display: flex;
+	gap: 19px;
+	&__details {
+		position: relative;
+	}
+	&__check {
+		display: flex;
+		gap: 9px;
+		align-items: center;
+		font-family: Roboto;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		color: #6f6e6e;
+	}
+	&__heading {
+		font-family: Lato;
+		font-style: normal;
+		font-weight: 400;
+		font-size: 14px;
+		line-height: 17px;
+		color: #6f6e6e;
+	}
+	&__summery {
+		display: flex;
+		align-items: center;
+		gap: 10px;
+	}
+	&__box {
+		display: flex;
+		flex-direction: column;
+		gap: 8px;
+		background: #ffffff;
+		box-shadow: 6px 4px 35px 0px #00000036;
+		padding: 7px 30px 11px 9px;
+		position: absolute;
+		left: -9px;
+		top: 22px;
+	}
+}
+.product-box {
+	@include centerflex();
+	gap: $gapGrid;
+}
+.product {
+	width: 360px;
+	// width: $thridSite;
+	// .product__content {
+	display: flex;
+	flex-direction: column;
+
+	&__img {
+		width: 100%;
+	}
+	&__content {
+		background-color: #f8f8f8;
+		padding: 24px 16px;
+		display: flex;
+		flex-direction: column;
+		gap: 16px;
+	}
+
+	&__name {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 13ps;
+		line-height: 16px;
+		color: $colorText;
+	}
+
+	&__text {
+		font-style: normal;
+		font-weight: 300;
+		font-size: 14ps;
+		line-height: 17px;
+		color: #5d5d5d;
+	}
+
+	&__price {
+		font-style: normal;
+		font-weight: 400;
+		font-size: 16ps;
+		line-height: 19px;
+		color: $colorSelectSite;
+	}
+}
+
+.list_count {
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	flex-wrap: wrap;
+    padding-top: 48px;
+}
+.pages-selector {
+	// @include centerflex();
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 284px;
+	height: 44px;
+	border: 1px solid #ebebeb;
+    gap: 18px;
+	// margin: 10px 20px;
+	&__list {
+		font-family: Lato;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		color: #ebebeb;
+	}
+	&__select-page {
+		font-family: Lato;
+		font-weight: 300;
+		font-size: 16px;
+		line-height: 100%;
+		letter-spacing: 0%;
+		color: $colorSelectSite;
+	}
+	&__btn{
+		height: 14px;
+		width: 8px;
+		border: none;
+		background: none;
+		color: #000000;
+	}
+}
